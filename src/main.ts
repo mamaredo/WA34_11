@@ -1,10 +1,11 @@
 import 'ress'
 import './style.css'
-import { mapClient } from './feature/Map/map-client'
+import { mapInit } from './feature/map/mapInit'
+import './feature/weather/api'
 
 window.onload = () => {
   // const app = document.querySelector<HTMLDivElement>('#app')!
   const headerTitle = document.getElementById('header-title')!
   headerTitle.textContent = 'ちずとてんきのあぷりけーしょん'
-  mapClient()
+  mapInit()
 }
