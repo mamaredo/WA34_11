@@ -1,4 +1,10 @@
+import 'ress'
 import './style.css'
-import './feature/Map/map-client'
+import { mapClient } from './feature/Map/map-client'
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+window.onload = () => {
+  // const app = document.querySelector<HTMLDivElement>('#app')!
+  const headerTitle = document.getElementById('header-title')!
+  headerTitle.textContent = 'ちずとてんきのあぷりけーしょん'
+  mapClient()
+}
