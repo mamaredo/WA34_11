@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Map Api</title>
+    <title>ちずとてんきのあぷりけーしょん</title>
   </head>
   <body>
     <div id="app" class="container">
       <div class="header">
-        <h1 class="header__title">ちずとてんきのあぷりけーしょん</h1>
+        <h1 id="header-title" class="header__title"></h1>
       </div>
 
-      <div class="section">
-        <div class="map">
-          <div id="map-view" style="width: 500px; height: 500px;"></div>
+      <div class="section section--map">
+        
+        <div class="map-wrapper">
+          <div id="map-view" class="map__view"></div>
         </div>
+        
+        <div class="map-wrapper">
+          <div class="map-feature">a</div>
+        </div>
+
       </div>
     </div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn17wqp8WvL-6F6b7s-vJLXReoYux71-s"></script>

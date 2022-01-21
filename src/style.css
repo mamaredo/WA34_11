@@ -1,8 +1,71 @@
-#app {
+body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+
+.container {
+  padding: 0 16px;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+}
+
+.section--map {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map-wrapper {
+  flex-basis: 50%;
+  height: 80vh;
+  padding: 0 16px 0 0;
+}
+.map-wrapper:last-child {
+  padding-right: 0;
+}
+
+.map-feature {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  width: 100%;
+  height: 100%;
+}
+
+.map__view {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .map-wrapper {
+    flex-basis: 100%;
+    height: 100%;
+    padding: 0 0 16px 0;
+  }
+  .map-wrapper:last-child {
+    padding-bottom: 0;
+  }
+
+  .map-feature {
+    height: auto;
+  }
+
+  .map__view {
+    height: 50vh;
+  }
+}
+
+.header {
+  padding: 40px 0;
+  text-align: center;
+}
+.header__title {
+  color: #2c3e50;
+}
+
+
+
+
