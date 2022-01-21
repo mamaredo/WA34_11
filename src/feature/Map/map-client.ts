@@ -1,33 +1,4 @@
-type Location = { lat: number; lng: number }
-const halLocation: Location = {
-  lat: 35.16832838570073,
-  lng: 136.88561516878792
-}
-
-const getInitLocation = async () => {
-  if (!navigator.geolocation) {
-    window.alert('Geolocation is not suport :(')
-    return halLocation
-  }
-
-  const currentPosition = await new Promise<Location>(res => {
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        const currentLocation = {
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude
-        }
-        res(currentLocation)
-      },
-      err => {
-        console.error(err.message)
-        res(halLocation)
-      }
-    )
-  })
-
-  return currentPosition
-}
+import { getInitialLocation } from './initial-location'
 
 const setMarker = (options: google.maps.MarkerOptions) => {
   return new google.maps.Marker({
@@ -68,7 +39,7 @@ const handleMapClick = (map: google.maps.Map) => {
 
 export const mapClient = async () => {
   const mapView = document.getElementById('map-view')!
-  const initLocation = await getInitLocation()
+  const initLocation = await getInitialLocation()
 
   const map = new google.maps.Map(mapView, {
     zoom: 13,
