@@ -1,28 +1,36 @@
+type Marker = google.maps.Marker
+
+type State = {
+  markers: Marker[]
+}
+
+type MarkerClient = {
+  disableMarker: () => void
+  markedCount: number
+  setMarker: google.maps.MarkerOptions
+}
+
+const state: State = {
+  markers: []
+}
+
 const setMarker = (options: google.maps.MarkerOptions) => {
   return new google.maps.Marker({
     ...options
   })
 }
 
-type MarkerClient = {
-  markers: google.maps.Marker[]
-  disableMarker: () => void
-  markedCount: number
-  setMarker: google.maps.MarkerOptions
-}
-
 export const markerClient: MarkerClient = {
-  markers: [],
   disableMarker: function () {
-    const marker = this.markers[this.markedCount - 1]
+    const marker = state.markers[this.markedCount - 1]
     marker.setMap(null)
   },
 
   get markedCount() {
-    return this.markers.length
+    return state.markers.length
   },
 
   set setMarker(options: Parameters<typeof setMarker>[0]) {
-    this.markers[this.markedCount] = setMarker(options)
+    state.markers[this.markedCount] = setMarker(options)
   }
 }
