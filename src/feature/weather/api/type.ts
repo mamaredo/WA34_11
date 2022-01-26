@@ -17,36 +17,6 @@ export type CurrentWeatherApiQueryStruct = {
   lang?: string
 }
 
-// export type CurrentWeatherApiResponse = {
-//   coord: {
-//     lon: number
-//     lat: number
-//   }
-//   weather: [
-//     {
-//       id: number
-//       main: string
-//       description: string
-//       icon: string
-//     }
-//   ]
-//   base: string
-//   main: {
-//     temp: number
-//     feels_like: number
-//     temp_min: number
-//     temp_max: number
-//     pressure: number
-//     humidity: number
-//     sea_level: number
-//     grnd_level: number
-//   }
-//   visibility: number
-//   wind: {
-//     speed
-//   }
-// }
-
 export type CurrentWeather = {
   name: string
   weather: {
@@ -54,10 +24,10 @@ export type CurrentWeather = {
     icon: string
   }
   temp: {
-    current: number
-    feelsLike: number
-    max: number
-    min: number
-    humidity: number
+    current: string | number
+    feelsLike: string | number
+    max: string | number
+    min: string | number
+    humidity: string | number
   }
 }
