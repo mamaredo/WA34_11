@@ -3,18 +3,18 @@ import type { RenderTextModel } from '@/types'
 import type { CurrentWeather } from '../api/type'
 
 const tempElement = ({
-  current = 0,
-  max = 0,
-  min = 0,
-  humidity = 0
-}): RenderTextModel[] => [
-  { id: 'temp-current', text: current },
-  { id: 'temp-max', text: max },
-  { id: 'temp-min', text: min },
-  { id: 'temp-humidity', text: humidity }
+  current,
+  max,
+  min,
+  humidity
+}: CurrentWeather['temp']): RenderTextModel[] => [
+  { id: 'temp-current', text: `現在： ${current}℃` },
+  { id: 'temp-max', text: `最高気温： ${max}℃` },
+  { id: 'temp-min', text: `最低気温： ${min}℃` },
+  { id: 'temp-humidity', text: `湿度： ${humidity}℃` }
 ]
 
-export const renderTempContent = async (content: CurrentWeather['temp']) => {
-  const renderTempContent = tempElement(content)
-  render(renderTempContent)
+export const renderTempContent = async (temp: CurrentWeather['temp']) => {
+  const content = tempElement(temp)
+  render(content)
 }
