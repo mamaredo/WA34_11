@@ -1,5 +1,3 @@
-// type ApiType = 'onecall'
-type ExcludeOption = 'current' | 'minutely' | 'hourly' | 'daily' | 'alerts'
 type UnitsOption = 'standard' | 'metric' | 'imperial'
 
 type OpenWeatherApiDefaultQuery = {
