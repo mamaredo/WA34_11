@@ -11,13 +11,15 @@ const weatherElement = ({
   icon
 }: WeatherContent): RenderTextModel[] => [
   { id: 'weather-description', text: description },
-  { id: 'weather-icon', text: icon }
+  {
+    id: 'weather-icon',
+    text: `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン" />`
+  }
 ]
 
 export const renderWeatherContent = async (
-  content: CurrentWeather['weather']
+  weather: CurrentWeather['weather']
 ) => {
-  // const content = await getCurrentWeather.get(query)
-  const renderWeatherContent = weatherElement(content)
-  render(renderWeatherContent)
+  const content = weatherElement(weather)
+  render(content)
 }
