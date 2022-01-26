@@ -1,8 +1,8 @@
 import 'ress'
 import './style.css'
 import { setElementText } from '@/utils'
-import { mapInit } from './feature/map/mapInit'
-import type { RenderTextModel } from './types'
+import { mapInit } from '@/features/map/mapInit'
+import type { RenderTextModel } from '@/types'
 
 const constanceText: RenderTextModel[] = [
   { id: 'header-title', text: 'ちずとてんきのあぷりけーしょん' },
@@ -13,7 +13,7 @@ const constanceText: RenderTextModel[] = [
 
 window.onload = () => {
   mapInit()
-  // const app = document.querySelector<HTMLDivElement>('#app')!
+
   for (const content of constanceText) {
     setElementText(content.id, content.text)
   }

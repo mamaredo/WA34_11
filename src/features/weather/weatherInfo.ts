@@ -1,15 +1,15 @@
-import { getCurrentWeather } from './api/getCurrentWeather'
-import type { CurrentWeatherApiQueryStruct, CurrentWeather } from './api/type'
+import { getCurrentWeather } from '@/features/weather/api/getCurrentWeather'
+import type {
+  CurrentWeatherApiQueryStruct,
+  CurrentWeather
+} from '@/features/weather/types'
+import { UserLocation } from '@/features/map/types'
 import { renderTempContent } from './view/temperature'
 import { renderWeatherContent } from './view/weather'
 import { renderLocationNameContent } from './view/locationName'
 
-type LocationType = {
-  lat: number
-  lng: number
-}
 export const weatherInfo = {
-  today: (location: LocationType) => {
+  today: (location: UserLocation) => {
     const query: CurrentWeatherApiQueryStruct = {
       lat: location.lat,
       lon: location.lng,

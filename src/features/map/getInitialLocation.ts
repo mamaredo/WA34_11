@@ -1,4 +1,5 @@
-export type UserLocation = { lat: number; lng: number }
+import { UserLocation } from '@/features/map/types'
+
 const halLocation: UserLocation = {
   lat: 35.16832838570073,
   lng: 136.88561516878792

@@ -1,7 +1,7 @@
 import { getInitialLocation } from './getInitialLocation'
-import type { UserLocation } from './getInitialLocation'
+import type { UserLocation } from '@/features/map/types'
 import { markerClient } from './markerClient'
-import { weatherInfo } from '@/feature/weather/weatherInfo'
+import { weatherInfo } from '@/features/weather/weatherInfo'
 
 const renderMapContent = (
   geocoder: google.maps.Geocoder,

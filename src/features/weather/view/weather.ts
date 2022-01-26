@@ -1,15 +1,11 @@
 import { render } from '@/utils'
-import type { CurrentWeather } from '../api/type'
+import type { CurrentWeather } from '@/features/weather/types'
 import type { RenderTextModel } from '@/types'
 
-type WeatherContent = {
-  description: string
-  icon: string
-}
 const weatherElement = ({
   description,
   icon
-}: WeatherContent): RenderTextModel[] => [
+}: CurrentWeather['weather']): RenderTextModel[] => [
   { id: 'weather-description', text: `： ${description}` },
   {
     id: 'weather-icon',

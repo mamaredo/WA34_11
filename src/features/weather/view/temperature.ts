@@ -1,6 +1,6 @@
 import { render } from '@/utils'
 import type { RenderTextModel } from '@/types'
-import type { CurrentWeather } from '../api/type'
+import type { CurrentWeather } from '@/features/weather/types'
 
 const tempElement = ({
   current,

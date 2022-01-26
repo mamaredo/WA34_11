@@ -1,7 +1,9 @@
 import { apiClient } from '@/lib/apiClient'
 import { createQueryString } from '@/utils/createQueryString'
-import type { CurrentWeather } from './type'
-import type { CurrentWeatherApiQueryStruct } from './type'
+import type {
+  CurrentWeather,
+  CurrentWeatherApiQueryStruct
+} from '@/features/weather/types'
 
 export const getCurrentWeather = {
   get: async (query: CurrentWeatherApiQueryStruct): Promise<CurrentWeather> => {
