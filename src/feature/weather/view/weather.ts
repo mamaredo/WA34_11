@@ -10,7 +10,7 @@ const weatherElement = ({
   description,
   icon
 }: WeatherContent): RenderTextModel[] => [
-  { id: 'weather-description', text: description },
+  { id: 'weather-description', text: `： ${description}` },
   {
     id: 'weather-icon',
     text: `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン" />`
