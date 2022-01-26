@@ -2,23 +2,16 @@
 type ExcludeOption = 'current' | 'minutely' | 'hourly' | 'daily' | 'alerts'
 type UnitsOption = 'standard' | 'metric' | 'imperial'
 
-export type OneCallApiQueryStruct = {
-  lat: number
-  lon: number
-  exclude?: ExcludeOption
-  units: UnitsOption
-  lang: string
-}
-
-export type CurrentWeatherApiQueryStruct = {
+type OpenWeatherApiDefaultQuery = {
   lat: number
   lon: number
   units?: UnitsOption
   lang?: string
 }
 
+export type CurrentWeatherApiQueryStruct = OpenWeatherApiDefaultQuery
+
 export type CurrentWeather = {
-  name: string
   weather: {
     description: string
     icon: string

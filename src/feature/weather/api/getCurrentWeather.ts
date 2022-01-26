@@ -8,14 +8,8 @@ export const getCurrentWeather = {
     const url = 'weather' + createQueryString(query)
     const res = await apiClient.get(url)
 
-    const {
-      name,
-      weather,
-      main: temp
-    } = { name: res.name, weather: res.weather[0], main: res.main }
-
+    const { weather, main: temp } = { weather: res.weather[0], main: res.main }
     const payload: CurrentWeather = {
-      name,
       weather: {
         description: weather.description,
         icon: weather.icon
@@ -28,6 +22,7 @@ export const getCurrentWeather = {
         humidity: temp.humidity
       }
     }
+
     return payload
   }
 }

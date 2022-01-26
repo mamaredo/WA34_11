@@ -18,7 +18,7 @@ export const weatherInfo = {
     }
     return getCurrentWeather.get(query)
   },
-  view: (content: CurrentWeather) => {
+  view: (content: CurrentWeather & { name: string }) => {
     const { name, weather, temp } = content
     renderLocationNameContent(name)
     renderWeatherContent(weather)
