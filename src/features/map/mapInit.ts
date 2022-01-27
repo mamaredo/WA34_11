@@ -2,6 +2,7 @@ import { getInitialLocation } from './getInitialLocation'
 import type { UserLocation } from '@/features/map/types'
 import { markerClient } from './markerClient'
 import { weatherInfo } from '@/features/weather/weatherInfo'
+import { getElementId } from '@/utils'
 
 const renderMapContent = (
   geocoder: google.maps.Geocoder,
@@ -37,7 +38,7 @@ const handleMapClick = (
 }
 
 export const mapInit = async () => {
-  const mapView = document.getElementById('map-view')!
+  const mapView = getElementId('map-view')
   const initLocation = await getInitialLocation()
   const map = new google.maps.Map(mapView, {
     zoom: 13,
