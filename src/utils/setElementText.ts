@@ -1,9 +1,9 @@
-import { getElementById } from './getElementById'
+import { getElementId } from './getElementId'
 
 const renderHtml = 'weather-icon'
 
 export const setElementText = (id: string, text: string | number) => {
-  const element = getElementById(id)
+  const element = getElementId(id)
   if (renderHtml === id) {
     element.innerHTML = text as string
   } else {
